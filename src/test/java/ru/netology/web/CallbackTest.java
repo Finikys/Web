@@ -17,18 +17,18 @@ class CallbackTest {
     private WebDriver driver;
 
     @BeforeAll
-    static void setUpAll() {
+    static void setupAll() {
         WebDriverManager.chromedriver().setup();
         System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
     }
 
     @BeforeEach
-    void setUp() {
+    void setup() {
         driver = new ChromeDriver();
     }
 
     @AfterEach
-    void tearDown() {
+    void teardown() {
         driver.quit();
         driver = null;
     }
