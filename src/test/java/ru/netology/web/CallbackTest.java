@@ -19,20 +19,20 @@ class CallbackTest {
     @BeforeAll
     static void setUpAll() {
         System.setProperty("webdriver.chrome.driver", "./driver/win/chromedriver.exe");
+
     }
 
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver();
-    }
-
-    @AfterEach
-    void tearDown() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
+    }
+
+    @AfterEach
+    void tearDown() {
         driver.quit();
         driver = null;
     }
